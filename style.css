@@ -1,0 +1,128 @@
+/* import */
+@font-face {
+    font-family: 'hanken_grotesk';
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.woff') format('woff'), 
+        url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+/* reset base style */
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-family: 'hanken_grotesk';
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    ---dark-gray-blue: hsl(224, 30%, 27%);
+    --light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    --light-lavender: hsl(241, 100%, 89%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --light-red: hsl(0, 100%, 67%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --fnt-size-title: 2.7rem;
+}
+
+
+/* utility */
+.text-center {
+    text-align: center;
+}
+
+/* color */
+.c-gray-blue--d {
+    color: var(---dark-gray-blue);
+}
+.c-light-lavender {
+    color: var(--light-lavender);
+}
+.c-white {
+    color: var(--white);
+}
+.c-pale-blue {
+    color: var(--pale-blue);
+}
+.c-persian-blue {
+    color: var(--persian-blue);
+}
+
+/* base style components */
+.main {
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+    "header"
+    "summary"
+    "button";
+}
+.b-header-section {
+    grid-area: header;
+    background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+    border-radius: 0 0 35px 35px;
+    padding: 1.5em 3.5em;
+}
+.b-summary {
+    grid-area: summary;
+}
+.b-button {
+    grid-area: button;
+    background-color: var(---dark-gray-blue);
+    border: transparent;
+    border-radius: 100px;
+    color: var(--white);
+    padding: 1em 2em;
+}
+
+@media only screen and (min-width: 600px) {
+    .main {
+        display: grid;
+        width: 100%;
+        grid-template-areas: 
+        "header summary"
+        "header summary"
+        "header button";
+    }
+}
+
+.b-summary-calc {
+    display: flex;
+    justify-content: space-between;
+}
+.b-summary-calc > p {
+    font-weight: bolder;
+    color: var(---dark-gray-blue);
+}
+.b-summary-calc > p > span {
+    font-weight: bolder;
+    color: var(--light-lavender);
+}
+
+.b-summary-calc--red {
+    background-color:hsla(0, 100%, 67%, 0.1);
+    color: var(--light-red);
+}
+.b-circle-result {
+    border-radius: 100px;
+    font-size: var( --fnt-size-title);
+    padding: calc(var( --fnt-size-title) - 1.7rem) calc(var( --fnt-size-title) - .8rem);
+    display: inline-block;
+    background: linear-gradient(var(--violet-blue), var(--persian-blue));
+}
+.b-circle-result > span {
+    display: block;
+    font-size: .8rem;
+}
+.b-title-header {
+    font-weight: lighter;
+    font-size: 1rem;
+}
